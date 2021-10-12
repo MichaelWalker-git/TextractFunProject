@@ -1,0 +1,134 @@
+input CreateOutputTableInput {
+  documentId: String!
+  outputType: String!
+  raw_text: String
+  src_lang: String
+  translated_text: String
+}
+
+input DeleteOutputTableInput {
+  documentId: String!
+  outputType: String!
+}
+
+type Mutation {
+  createOutputTable(input: CreateOutputTableInput!): OutputTable
+  updateOutputTable(input: UpdateOutputTableInput!): OutputTable
+  deleteOutputTable(input: DeleteOutputTableInput!): OutputTable
+}
+
+type OutputTable {
+  documentId: String!
+  outputType: String!
+  raw_text: String
+  src_lang: String
+  translated_text: String
+}
+
+type OutputTableConnection {
+  items: [OutputTable]
+  nextToken: String
+}
+
+type Query {
+  getOutputTable(documentId: String!, outputType: String!): OutputTable
+  listOutputTables(filter: TableOutputTableFilterInput, limit: Int, nextToken: String): OutputTableConnection
+}
+
+type Subscription {
+  onCreateOutputTable(
+    documentId: String,
+    outputType: String,
+    raw_text: String,
+    src_lang: String,
+    translated_text: String
+  ): OutputTable
+  @aws_subscribe(mutations: ["createOutputTable"])
+  onUpdateOutputTable(
+    documentId: String,
+    outputType: String,
+    raw_text: String,
+    src_lang: String,
+    translated_text: String
+  ): OutputTable
+  @aws_subscribe(mutations: ["updateOutputTable"])
+  onDeleteOutputTable(
+    documentId: String,
+    outputType: String,
+    raw_text: String,
+    src_lang: String,
+    translated_text: String
+  ): OutputTable
+  @aws_subscribe(mutations: ["deleteOutputTable"])
+}
+
+input TableBooleanFilterInput {
+  ne: Boolean
+  eq: Boolean
+}
+
+input TableFloatFilterInput {
+  ne: Float
+  eq: Float
+  le: Float
+  lt: Float
+  ge: Float
+  gt: Float
+  contains: Float
+  notContains: Float
+  between: [Float]
+}
+
+input TableIDFilterInput {
+  ne: ID
+  eq: ID
+  le: ID
+  lt: ID
+  ge: ID
+  gt: ID
+  contains: ID
+  notContains: ID
+  between: [ID]
+  beginsWith: ID
+}
+
+input TableIntFilterInput {
+  ne: Int
+  eq: Int
+  le: Int
+  lt: Int
+  ge: Int
+  gt: Int
+  contains: Int
+  notContains: Int
+  between: [Int]
+}
+
+input TableOutputTableFilterInput {
+  documentId: TableStringFilterInput
+  outputType: TableStringFilterInput
+  raw_text: TableStringFilterInput
+  src_lang: TableStringFilterInput
+  translated_text: TableStringFilterInput
+}
+
+input TableStringFilterInput {
+  ne: String
+  eq: String
+  le: String
+  lt: String
+  ge: String
+  gt: String
+  contains: String
+  notContains: String
+  between: [String]
+  beginsWith: String
+}
+
+input UpdateOutputTableInput {
+  documentId: String!
+  outputType: String!
+  raw_text: String
+  src_lang: String
+  translated_text: String
+}

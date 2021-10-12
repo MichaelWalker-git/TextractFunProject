@@ -1,0 +1,9 @@
+subscription MySubscription {
+    onCreateOutputTable {
+        raw_text
+        src_lang
+        translated_text
+        outputType
+        documentId
+    }
+}
