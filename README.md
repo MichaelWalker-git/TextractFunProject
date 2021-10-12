@@ -1,70 +1,29 @@
-# Getting Started with Create React App
+# Description
+- Motivation was a 2021 Case Study: https://aws.amazon.com/solutions/case-studies/volkswagen-group-case-study/
+- During vehicle production, Volkswagen Group brands must apply 25 different labels that contain country-specific safety, usability, and specification data—with over 2,000 variants. Any damaged, incorrect, or missing labels could pose regulatory issues. Furthermore, errors can occur during the inspection process, as employees are not always able to read the labels to confirm accuracy.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+- To automate this process, Volkswagen brand Porsche developed an intelligent Sign Inspection (iSI) solution on Amazon Web Services (AWS).
+- This solution is powered by the Digital Production Platform (DPP), a cloud-based industrial platform built by the Volkswagen Group and AWS to enable the development of scalable use cases across the company and transform its manufacturing and logistics processes.
+- The DPP will also serve as the foundation for the Industrial Cloud—an open platform, community, and marketplace of digital solutions available to the automotive manufacturing industry.
 
-## Available Scripts
+####  Using the iSI Solution during Vehicle Production
+Porsche uses iSI to automatically inspect labels on the plant floor with IoT-enabled devices and to perform manual inspections using a mobile app. In the assembly line, automated cameras photograph labels and send them to the cloud for analysis. If an issue is detected, the system notifies an in-line worker, who takes the vehicle to a quality check station for manual inspection.
 
-In the project directory, you can run:
+During manual inspection, workers photograph individual labels using the iSI app. Using Amazon Textract—a fully managed machine learning service that automatically extracts printed text, handwriting, and other data from scanned documents—the iSI app compares text on labels to data stored in Volkswagen’s ICV Inference Service to identify anomalies. The results are translated and displayed to the worker, who can take appropriate action to fix detected errors.
 
-### `yarn start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+##Current Pain Points:
+- On premise (Texas, Germany, CA)
+- Manual Process of Pictures, Translation and Verification
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Business Objectives
+- Modern Application Architecture + Automation
+- Security 
+- Fault Tolerance
+- Data Resilience
+- Bottlenecks
+- Lack of scalability and future work 
 
-### `yarn test`
+## System Design
+![AB3 Diagram](https://user-images.githubusercontent.com/11032490/137006875-f3eddc5d-271b-4177-a8a8-2cbff5e6cfee.png)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `yarn build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
