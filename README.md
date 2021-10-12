@@ -12,7 +12,7 @@ Porsche uses iSI to automatically inspect labels on the plant floor with IoT-ena
 During manual inspection, workers photograph individual labels using the iSI app. Using Amazon Textract—a fully managed machine learning service that automatically extracts printed text, handwriting, and other data from scanned documents—the iSI app compares text on labels to data stored in Volkswagen’s ICV Inference Service to identify anomalies. The results are translated and displayed to the worker, who can take appropriate action to fix detected errors.
 
 
-##Current Pain Points:
+## Current Pain Points:
 - On premise (Texas, Germany, CA)
 - Manual Process of Pictures, Translation and Verification
 
@@ -27,3 +27,5 @@ During manual inspection, workers photograph individual labels using the iSI app
 ## System Design
 ![AB3 Diagram](https://user-images.githubusercontent.com/11032490/137006875-f3eddc5d-271b-4177-a8a8-2cbff5e6cfee.png)
 
+### Cost Estimate
+![CostEstimate 08/2021](https://user-images.githubusercontent.com/11032490/137008652-c2d03d77-02a4-4f17-87be-2c5dcbd40a70.png)
